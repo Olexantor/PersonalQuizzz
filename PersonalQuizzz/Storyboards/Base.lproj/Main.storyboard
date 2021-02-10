@@ -102,7 +102,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ky9-SJ-QsS">
                                 <rect key="frame" x="16" y="228" width="288" height="112.5"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ahE-5V-NU9">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ahE-5V-NU9">
                                         <rect key="frame" x="-2" y="0.0" width="292" height="31"/>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9o1-KE-mWD">
@@ -124,7 +124,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svf-wZ-dUW">
                                         <rect key="frame" x="0.0" y="82.5" width="288" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Ответить"/>
                                         <connections>
                                             <action selector="rangedAnswerButtonPressed" destination="EP6-nG-1Yd" eventType="touchUpInside" id="vSd-ga-W1T"/>
                                         </connections>
@@ -212,14 +212,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXj-GW-6e9">
                                         <rect key="frame" x="121" y="59" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="EP6-nG-1Yd" eventType="touchUpInside" id="NFF-aX-GoZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9P-AO-hlI">
                                         <rect key="frame" x="121" y="118" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="EP6-nG-1Yd" eventType="touchUpInside" id="P9B-2t-65v"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRm-QY-4U1">
                                         <rect key="frame" x="121" y="177" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="EP6-nG-1Yd" eventType="touchUpInside" id="H9c-te-Lk7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -253,13 +262,7 @@
                             <constraint firstItem="yoq-TC-IzS" firstAttribute="trailing" secondItem="ky9-SJ-QsS" secondAttribute="trailing" constant="16" id="w3x-Lf-6qK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="Yhk-5r-9jp">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="HiZ-tb-mMA">
-                            <connections>
-                                <segue destination="52l-Mt-tfB" kind="show" id="Dwq-Bv-F7M"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Вопрос №" id="Yhk-5r-9jp"/>
                     <connections>
                         <outlet property="multipleStackView" destination="HMM-4a-aok" id="R3G-w5-pTv"/>
                         <outlet property="questionLabel" destination="sLg-LB-1NY" id="FtC-TI-fNv"/>
@@ -329,6 +332,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultDescriptionLabel" destination="n9g-pm-i1E" id="D3g-yv-Hig"/>
+                        <outlet property="resultEmojiLabel" destination="RAM-cJ-qtX" id="emy-09-Sjw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAZ-9Y-Cwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="oQl-xi-3Bi" userLabel="Exit" sceneMemberID="exit"/>
@@ -354,9 +361,6 @@
             <point key="canvasLocation" x="491" y="124"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="YKz-BG-wrC"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
